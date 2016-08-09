@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Helvetica.ttc">
+            <string>Helvetica</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Main-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController storyboardIdentifier="Scan" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" userLabel="Main" customClass="MainViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Scanner not connected" translatesAutoresizingMaskIntoConstraints="NO" id="WsT-vh-Kia">
+                                <rect key="frame" x="0.0" y="407" width="600" height="144"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="ygs-E4-szO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textView>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyo-RQ-PNi">
+                                <rect key="frame" x="192" y="340" width="217" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="7TQ-es-Z6O"/>
+                                    <constraint firstAttribute="width" constant="217" id="vdm-UU-UHS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                <state key="normal" title="SCAN BARCODE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onScanDown" destination="W5J-7L-Pyd" eventType="touchDown" id="gQG-Lg-N9a"/>
+                                    <action selector="onScanUp" destination="W5J-7L-Pyd" eventType="touchUpOutside" id="J5b-id-fDp"/>
+                                    <action selector="onScanUp" destination="W5J-7L-Pyd" eventType="touchUpInside" id="ucJ-gj-6l7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeH-bM-6E7">
+                                <rect key="frame" x="507" y="28" width="86" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="100%,4.1v(0)" backgroundImage="0.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WsT-vh-Kia" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="1Qb-Sm-ahw"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="WsT-vh-Kia" secondAttribute="bottom" id="1vl-dq-XGc"/>
+                            <constraint firstAttribute="centerX" secondItem="Kyo-RQ-PNi" secondAttribute="centerX" id="R5Z-nl-5mS"/>
+                            <constraint firstAttribute="trailing" secondItem="WsT-vh-Kia" secondAttribute="trailing" id="azh-zb-d9z"/>
+                            <constraint firstItem="WsT-vh-Kia" firstAttribute="top" secondItem="Kyo-RQ-PNi" secondAttribute="bottom" constant="18" id="qFm-Fj-WUv"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Main" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="btScan" destination="Kyo-RQ-PNi" id="Ss3-7m-pgA"/>
+                        <outlet property="tvInfo" destination="WsT-vh-Kia" id="H2n-xw-F0Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Print-->
+        <scene sceneID="w72-IG-cnD">
+            <objects>
+                <viewController storyboardIdentifier="Print" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6xH-UV-aQN" userLabel="Print" customClass="PrintViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tPy-IL-ySj"/>
+                        <viewControllerLayoutGuide type="bottom" id="cy4-nD-Eyo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9ya-CA-EyH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baK-7S-JZO">
+                                <rect key="frame" x="184" y="97" width="232" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Print self test">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSelfTest" destination="ePf-Pk-ci7" eventType="touchUpInside" id="wyD-7K-QzK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSt-s0-2sL">
+                                <rect key="frame" x="184" y="234" width="232" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Calibrate BlackMark">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCalibrate" destination="ePf-Pk-ci7" eventType="touchUpInside" id="mGC-xU-SMg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwi-cY-zxQ">
+                                <rect key="frame" x="184" y="187" width="232" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Demo barcodes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBarcodesDemo" destination="ePf-Pk-ci7" eventType="touchUpInside" id="ZA1-OP-LaB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-0n-Ee6">
+                                <rect key="frame" x="184" y="324" width="232" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Demo graphic">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onGraphicsDemo" destination="ePf-Pk-ci7" eventType="touchUpInside" id="Hl4-fx-Ex5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BR8-1O-DYO">
+                                <rect key="frame" x="184" y="279" width="232" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Print Label">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPrintLabelDemo" destination="ePf-Pk-ci7" eventType="touchUpInside" id="kML-4h-zIj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-6U-ehy">
+                                <rect key="frame" x="184" y="142" width="232" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Demo fonts">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFontsDemo" destination="ePf-Pk-ci7" eventType="touchUpInside" id="tpc-B1-e70"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="OUT OF PAPER" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zQu-Ba-piJ">
+                                <rect key="frame" x="140" y="28" width="320" height="41"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" red="0.84705889229999998" green="0.0" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="8GN-0n-Ee6" secondAttribute="centerX" id="32c-zk-d6k"/>
+                            <constraint firstAttribute="centerX" secondItem="BR8-1O-DYO" secondAttribute="centerX" id="IN6-fT-5hf"/>
+                            <constraint firstAttribute="centerX" secondItem="baK-7S-JZO" secondAttribute="centerX" id="TJR-Jc-8P6"/>
+                            <constraint firstAttribute="centerX" secondItem="gwi-cY-zxQ" secondAttribute="centerX" id="dXU-R2-nIk"/>
+                            <constraint firstAttribute="centerX" secondItem="zQu-Ba-piJ" secondAttribute="centerX" id="kRc-gP-dal"/>
+                            <constraint firstAttribute="centerX" secondItem="5nC-6U-ehy" secondAttribute="centerX" id="kpp-cO-0FC"/>
+                            <constraint firstAttribute="centerX" secondItem="tSt-s0-2sL" secondAttribute="centerX" id="pBJ-Hb-mQl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Print" image="first" id="SBh-1e-Lyq" userLabel="Print"/>
+                    <connections>
+                        <outlet property="lbPaperStatus" destination="zQu-Ba-piJ" id="wZS-fG-N9p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePf-Pk-ci7" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-994"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" userLabel="Settings" customClass="SettingsViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="eHB-zf-RtX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableCell" textLabel="9xi-z4-soQ" detailTextLabel="NU6-X2-PLL" style="IBUITableViewCellStyleSubtitle" id="tKA-5l-hFO">
+                                        <rect key="frame" x="0.0" y="50" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tKA-5l-hFO" id="MwR-0i-mO7">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9xi-z4-soQ">
+                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NU6-X2-PLL">
+                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="YKv-zy-3Sv"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="8Hx-yS-3p5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eHB-zf-RtX" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="0Zh-hJ-pOO"/>
+                            <constraint firstItem="eHB-zf-RtX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="kDW-I4-K6T"/>
+                            <constraint firstAttribute="trailing" secondItem="eHB-zf-RtX" secondAttribute="trailing" id="qXK-7H-UiU"/>
+                            <constraint firstAttribute="bottom" secondItem="eHB-zf-RtX" secondAttribute="bottom" id="viJ-Us-4tf"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="cPa-gy-q4n" userLabel="Settings"/>
+                    <connections>
+                        <outlet property="tvSettings" destination="eHB-zf-RtX" id="hm7-OA-tsA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Crypto-->
+        <scene sceneID="hBT-pV-ACO">
+            <objects>
+                <viewController storyboardIdentifier="Crypto" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B1H-Wr-fXI" userLabel="Crypto" customClass="CryptoViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ctf-Wq-oN3"/>
+                        <viewControllerLayoutGuide type="bottom" id="L5Z-Pr-U7q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="42o-7U-8Jy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tzj-Zr-RAY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableCell" textLabel="l1T-D4-8Sc" detailTextLabel="R0B-9i-z6n" style="IBUITableViewCellStyleSubtitle" id="UQM-Yk-jcX">
+                                        <rect key="frame" x="0.0" y="50" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UQM-Yk-jcX" id="aF0-KU-SdQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l1T-D4-8Sc">
+                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R0B-9i-z6n">
+                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="B1H-Wr-fXI" id="7mR-5z-HiD"/>
+                                    <outlet property="delegate" destination="B1H-Wr-fXI" id="G0z-NQ-gQE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Tzj-Zr-RAY" secondAttribute="bottom" id="84M-pN-97C"/>
+                            <constraint firstItem="Tzj-Zr-RAY" firstAttribute="leading" secondItem="42o-7U-8Jy" secondAttribute="leading" id="dpT-9I-DsZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Tzj-Zr-RAY" secondAttribute="trailing" id="hJq-XC-Tsg"/>
+                            <constraint firstItem="Tzj-Zr-RAY" firstAttribute="top" secondItem="42o-7U-8Jy" secondAttribute="top" id="nze-k4-hNY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="EMSR" image="lock" id="Met-6J-naK" userLabel="Crypto"/>
+                    <connections>
+                        <outlet property="tvCrypto" destination="Tzj-Zr-RAY" id="65M-UW-xPM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WlW-no-fqX" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="0.png" width="200" height="52"/>
+        <image name="first" width="30" height="30"/>
+        <image name="lock" width="32" height="32"/>
+        <image name="settings" width="26" height="28"/>
+    </resources>
+</document>

@@ -1,0 +1,10 @@
+{
+    "linea-pro-cdv": {
+        "source": {
+            "type": "registry",
+            "id": "lineapro-phonegap-plugin"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
